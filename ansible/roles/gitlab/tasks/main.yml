@@ -1,2 +1,3 @@
 ---
 # tasks file for gitlab
+- include: install_docker.yml
