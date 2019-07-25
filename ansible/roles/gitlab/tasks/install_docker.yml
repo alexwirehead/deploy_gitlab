@@ -39,5 +39,8 @@
 
 - name: Install Docker Compose
   pip:
-    name: docker-compose
+    name: 
+      - docker-compose
+      - docker
+      - pyyaml
     state: present
