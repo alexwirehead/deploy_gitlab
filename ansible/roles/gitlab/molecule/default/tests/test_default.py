@@ -6,7 +6,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-def test_hosts_epel_repo(host):
+def test_epel_repo(host):
     f = host.file('/etc/yum.repos.d/epel.repo')
     assert f.exists
 
@@ -18,6 +18,11 @@ def test_requirement_packages_is_installed(host):
     assert device_mapper.is_installed
     assert lvm2.is_installed
     assert pip.is_installed
+
+
+def test_docker_repo(host):
+    f = host.file('/etc/yum.repos.d/docker-ce-stable.repo')
+    assert f.exists
 
 
 def test_docker_is_installed(host):
