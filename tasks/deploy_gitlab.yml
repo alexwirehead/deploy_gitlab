@@ -1,0 +1,20 @@
+---
+- name: Create Gitlab Dirs
+  file:
+    path: '{{ item }}'
+    state: directory
+  with_items:
+    - '/srv/gitlab/config'
+    - '/srv/gitlab/data'
+    - '/srv/gitlab/logs'
+
+- name: Add Docker Compose config
+  template:
+    src: docker-compose.yaml.j2
+    dest: /srv/gitlab/docker-compose.yaml
+
+- name: Start Gitlab
+  docker_compose:
+    project_src: /srv/gitlab
+    project_name: gitlab
+    state: present
