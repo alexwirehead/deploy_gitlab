@@ -5,9 +5,9 @@ python:
 install:
   - pip install ansible molecule apache-libcloud paramiko
 script:
-  - molecule create
-  - molecule converge
-  - molecule verify
+  - molecule --debug create
+  - molecule --debug converge
+  - molecule --debug verify
 after_script:
   - molecule destroy
 env:
