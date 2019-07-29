@@ -1,7 +1,7 @@
 Config and deploy test Gitlab env 
 =========
 The Ansible role for configuring and deploying Gitlab to explore Gitlab CI/CD 
-Ansible role for Gitlab test environment for learning
+
 
 Requirements
 ------------
