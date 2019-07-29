@@ -3,7 +3,7 @@ language: python
 python:
   - '3.6'
 install:
-  - pip install ansible molecule apache-libcloud
+  - pip install ansible molecule apache-libcloud paramiko
 script:
   - molecule create
   - molecule converge
