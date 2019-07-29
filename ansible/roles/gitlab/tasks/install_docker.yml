@@ -32,14 +32,14 @@
     state: present
 
 - name: enable and start docker service
-  systemd: 
+  systemd:
     name: docker
     state: started
     enabled: yes
 
 - name: Install Docker Compose
   pip:
-    name: 
+    name:
       - docker-compose
       - docker
       - pyyaml
