@@ -5,9 +5,11 @@ python:
 install:
   - pip install ansible molecule apache-libcloud
 script:
-  - molecule --debug test
+  - molecule create
+  - molecule converge
+  - molecule verify
 after_script:
-  - molecule --debug destroy
+  - molecule destroy
 env:
   matrix:
     - GCE_CREDENTIALS_FILE="$(pwd)/cred.json"
