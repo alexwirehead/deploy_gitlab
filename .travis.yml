@@ -16,6 +16,6 @@ install:
 script:
   - molecule --version
   - ansible --version
-  - molecule --dubug test
+  - molecule --debug test
 after_script:
   - molecule --debug destroy
