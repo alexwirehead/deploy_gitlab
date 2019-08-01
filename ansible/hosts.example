@@ -1,0 +1,2 @@
+[gitlab]
+gitlab_server ansible_ssh_host=34.77.203.11
